@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Resizing using Nearest Neighbor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-left: 3px solid #3498db;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📄 Image Resizing Using Nearest Neighbor Interpolation</h1>
+
+    <h2>📝 Overview</h2>
+    <p>
+        This document describes a Python-based program that resizes grayscale images using the 
+        <strong>nearest neighbor interpolation</strong> technique. The user provides the image path and a scaling factor. 
+        The script displays both the original and resized images.
+    </p>
+
+    <h2>📦 Requirements</h2>
+    <p>The program depends on the following Python libraries:</p>
+    <ul>
+        <li><strong>Pillow (PIL)</strong>: For loading and displaying images</li>
+        <li><strong>NumPy</strong>: For array-based image processing</li>
+    </ul>
+    <pre><code>pip install pillow numpy</code></pre>
+
+    <h2>🔍 Description of Functionality</h2>
+    <ol>
+        <li><strong>Image Loading and Conversion:</strong> The image is converted to grayscale for simplified processing.</li>
+        <li><strong>Dimension Extraction:</strong> The original image dimensions are obtained for resizing calculations.</li>
+        <li><strong>Resizing Logic:</strong> Nearest neighbor logic maps each new pixel to its closest counterpart in the original image.</li>
+        <li><strong>Pixel Mapping:</strong> A new image is created and filled with the selected pixel values.</li>
+        <li><strong>Display:</strong> Both original and resized images are displayed for visual confirmation.</li>
+    </ol>
+
+    <h2>🧠 How Nearest Neighbor Works</h2>
+    <p>
+        For each pixel in the resized image, the algorithm identifies and copies the value of the closest pixel in the original image. 
+        This method is fast but can produce visible blocky artifacts, especially when enlarging images.
+    </p>
+
+    <h2>🖥️ User Interaction</h2>
+    <p>The script asks the user to provide:</p>
+    <ul>
+        <li>The <strong>file path</strong> to the image</li>
+        <li>A <strong>scaling factor</strong> (e.g., <code>2</code> to double the size, <code>0.5</code> to reduce by half)</li>
+    </ul>
+
+    <h2>⚠️ Limitations</h2>
+    <ul>
+        <li>Only supports grayscale images</li>
+        <li>No smoothing or blending of pixels</li>
+        <li>May cause blocky or pixelated output when enlarging</li>
+    </ul>
+
+    <h2>✅ Use Cases</h2>
+    <ul>
+        <li>Quick and basic image resizing tasks</li>
+        <li>Demonstrating interpolation methods in image processing education</li>
+        <li>Scenarios where speed is more critical than quality</li>
+    </ul>
+
+</body>
+</html>
